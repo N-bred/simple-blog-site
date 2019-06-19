@@ -65,6 +65,8 @@ body {
 .header .logo__container img {
   display: block;
   height: auto;
+  width: 100%;
+  max-width: 5rem;
 }
 
 .header .social-media__container {
