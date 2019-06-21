@@ -1,3 +1,13 @@
+/* 
+Theme Name: ThemeBlog
+Theme URI: https://n-bred.github.io/simple-blog-site/index.html
+Author: N-bred
+Author URI: https://n-bred.github.io/index/
+Description: First wordpress theme ever
+Version: 1.0
+
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Oswald:400,500,700&display=swap');
 
 $bg: #f2f2f2;
@@ -280,6 +290,11 @@ body {
       background: $white;
       border-radius: 3px;
 
+      &.article-only {
+         flex: 1 0 100%;
+         box-shadow: none;
+      }
+
       @media only screen and (max-width: 600px) {
          flex: 0 0 100%;
       }
@@ -289,10 +304,20 @@ body {
          border-bottom: 2px solid $grey-dark;
       }
 
+      &__img-container.article-only {
+         border-bottom: none;
+      }
+
       &__img {
          width: 100%;
          display: block;
          border-radius: 3px;
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+      }
+
+      &__img.article-only {
+         border-radius: 0;
       }
 
       &__title,
@@ -314,6 +339,14 @@ body {
          }
       }
 
+      &__title.article-only {
+         text-align: left;
+
+         .text.article-only {
+            font-size: 2.4rem;
+         }
+      }
+
       &__date {
          padding: 0 2.5rem;
 
@@ -324,13 +357,26 @@ body {
          }
       }
 
+      &__date.article-only {
+         padding: 2.5rem 2.5rem 0;
+      }
+
       &__content {
          &-text {
             font-size: 1.6rem;
          }
+
+         &-text.article-only {
+            &:not(:first-child) {
+               margin-top: 2.5rem;
+            }
+         }
       }
 
       &__tags {
+         &-title {
+            margin-bottom: 1.5rem;
+         }
          &-list {
             list-style: none;
             display: flex;

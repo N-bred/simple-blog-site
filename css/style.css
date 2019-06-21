@@ -1,3 +1,12 @@
+/* 
+Theme Name: ThemeBlog
+Theme URI: https://n-bred.github.io/simple-blog-site/index.html
+Author: N-bred
+Author URI: https://n-bred.github.io/index/
+Description: First wordpress theme ever
+Version: 1.0
+
+*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Oswald:400,500,700&display=swap");
 html {
   font-size: 62.5%;
@@ -336,6 +345,14 @@ body {
   border-radius: 3px;
 }
 
+.main .post.article-only {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 @media only screen and (max-width: 600px) {
   .main .post {
     -webkit-box-flex: 0;
@@ -349,10 +366,20 @@ body {
   border-bottom: 2px solid #3b3b3b;
 }
 
+.main .post__img-container.article-only {
+  border-bottom: none;
+}
+
 .main .post__img {
   width: 100%;
   display: block;
   border-radius: 3px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.main .post__img.article-only {
+  border-radius: 0;
 }
 
 .main .post__title, .main .post__content, .main .post__tags {
@@ -370,6 +397,14 @@ body {
   color: #7780da;
 }
 
+.main .post__title.article-only {
+  text-align: left;
+}
+
+.main .post__title.article-only .text.article-only {
+  font-size: 2.4rem;
+}
+
 .main .post__date {
   padding: 0 2.5rem;
 }
@@ -380,8 +415,20 @@ body {
   color: #909090;
 }
 
+.main .post__date.article-only {
+  padding: 2.5rem 2.5rem 0;
+}
+
 .main .post__content-text {
   font-size: 1.6rem;
+}
+
+.main .post__content-text.article-only:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
+.main .post__tags-title {
+  margin-bottom: 1.5rem;
 }
 
 .main .post__tags-list {
