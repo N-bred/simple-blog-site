@@ -46,6 +46,8 @@ body {
 // Start Header
 
 .header {
+   transition: margin 0.5s;
+   position: relative;
    .container {
       padding: 1.5rem;
       box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.2);
@@ -126,7 +128,9 @@ body {
 
    .nav {
       background: darken($color-primary-dark, 10%);
-
+      position: absolute;
+      left: 0;
+      width: 100%;
       // This container is rather important, it affects alot
       // of the display in the navbar
       // Padding on 0 allows to get the same height as parent
@@ -134,6 +138,10 @@ body {
       .container {
          padding: 1.5rem;
          box-shadow: 0rem 1rem 1.5rem rgba(0, 0, 0, 0.2);
+
+         @media only screen and (max-width: 1000px) {
+            padding: 0;
+         }
       }
 
       &__list {
@@ -168,7 +176,7 @@ body {
 
       &__item:hover > ul {
          visibility: visible;
-         animation: dropdown 0.3s;
+         animation: opacityAnim 0.3s;
       }
 
       &__sub-list {
@@ -217,6 +225,11 @@ body {
 // Main
 
 .main {
+   .container {
+      @media only screen and (max-width: 600px) {
+         padding-top: 8.2rem;
+      }
+   }
    &__wrapper {
       display: flex;
 
@@ -607,6 +620,10 @@ body {
       }
    }
 
+   &--top {
+      padding-top: 14rem;
+   }
+
    &--footer {
       padding: 5rem 0;
    }
@@ -636,7 +653,7 @@ body {
 // End Ads
 
 // Keyframes
-@keyframes dropdown {
+@keyframes opacityAnim {
    from {
       opacity: 0;
    }

@@ -32,6 +32,12 @@ body {
   background: #fff;
 }
 
+.header {
+  -webkit-transition: margin 0.5s;
+  transition: margin 0.5s;
+  position: relative;
+}
+
 .header .container {
   padding: 1.5rem;
   -webkit-box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.2);
@@ -143,12 +149,21 @@ body {
 
 .header .nav {
   background: #4f5bcf;
+  position: absolute;
+  left: 0;
+  width: 100%;
 }
 
 .header .nav .container {
   padding: 1.5rem;
   -webkit-box-shadow: 0rem 1rem 1.5rem rgba(0, 0, 0, 0.2);
           box-shadow: 0rem 1rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1000px) {
+  .header .nav .container {
+    padding: 0;
+  }
 }
 
 .header .nav__list {
@@ -190,8 +205,8 @@ body {
 
 .header .nav__item:hover > ul {
   visibility: visible;
-  -webkit-animation: dropdown 0.3s;
-          animation: dropdown 0.3s;
+  -webkit-animation: opacityAnim 0.3s;
+          animation: opacityAnim 0.3s;
 }
 
 .header .nav__sub-list {
@@ -236,6 +251,12 @@ body {
 
 .header .nav-fixed__link:hover {
   background: #4f5bcf;
+}
+
+@media only screen and (max-width: 600px) {
+  .main .container {
+    padding-top: 8.2rem;
+  }
 }
 
 .main__wrapper {
@@ -711,6 +732,10 @@ body {
   }
 }
 
+.ad--top {
+  padding-top: 14rem;
+}
+
 .ad--footer {
   padding: 5rem 0;
 }
@@ -746,7 +771,7 @@ body {
   }
 }
 
-@-webkit-keyframes dropdown {
+@-webkit-keyframes opacityAnim {
   from {
     opacity: 0;
   }
@@ -755,7 +780,7 @@ body {
   }
 }
 
-@keyframes dropdown {
+@keyframes opacityAnim {
   from {
     opacity: 0;
   }
